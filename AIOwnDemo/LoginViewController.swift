@@ -14,6 +14,8 @@ class LoginViewController: UIViewController {
 
 	var isNeesGuide: Bool = true
 
+	var test: Bool!
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
@@ -53,6 +55,7 @@ class LoginViewController: UIViewController {
 
 	@IBAction func unwindFromGuideViewController(sender: UIStoryboardSegue) {
 		isNeesGuide = false
+		setNeedShowGuide(isNeesGuide)
 	}
 }
 
@@ -66,7 +69,14 @@ extension LoginViewController {
 		}
 	}
 
+	// MARK: 检查是否需要显示的引导页面
 	func checkNeedShowGuideViewController() {
+		if let guideBean = ArchiverUtils.loadData(ArchiverPath.NeedGuidePath) as? NeedGuideBean {
+			isNeesGuide = guideBean.needGuide
+		} else {
+			isNeesGuide = true
+		}
+
 		if isNeesGuide {
 			showGuideViewController()
 		} else {
@@ -81,6 +91,12 @@ extension LoginViewController {
 //			UIView.commitAnimations()
 
 		}
+	}
+
+	// MARK: 设置是否需要显示引导页面
+	func setNeedShowGuide(need: Bool) {
+		let bean = NeedGuideBean(needGuide: need)
+		ArchiverUtils.saveData(bean, path: ArchiverPath.NeedGuidePath)
 	}
 
 }

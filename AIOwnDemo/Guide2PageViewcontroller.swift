@@ -51,6 +51,11 @@ class Guide2PageViewcontroller: UIViewController {
 		return .LightContent
 	}
 
+	// MARK: 隐藏状态栏
+	override func prefersStatusBarHidden() -> Bool {
+		return true
+	}
+
 	/*
 	 // MARK: - Navigation
 
