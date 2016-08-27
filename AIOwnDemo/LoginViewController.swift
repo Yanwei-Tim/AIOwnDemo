@@ -63,7 +63,7 @@ class LoginViewController: UIViewController {
 extension LoginViewController {
 
 	func showGuideViewController() {
-		if let vc = storyboard?.instantiateViewControllerWithIdentifier(StoryboardID.guideViewController) {
+		if let vc = R.storyboard.main.guideStoryboardID() {
 			vc.modalTransitionStyle = .FlipHorizontal
 			presentViewController(vc, animated: true, completion: nil)
 		}

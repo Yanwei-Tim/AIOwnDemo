@@ -22,7 +22,7 @@ struct ArchiverUtils {
 }
 
 extension ArchiverUtils {
-	static var basePath: NSURL {
+	static var baseDocPath: NSURL {
 		let fileManager = NSFileManager.defaultManager()
 		let path = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
 		if fileManager.fileExistsAtPath(path.path!) {
@@ -34,6 +34,6 @@ extension ArchiverUtils {
 
 	// MARK: 给定文件名, 返回文件的全路径
 	static func getPath(fileName: String) -> String {
-		return basePath.URLByAppendingPathComponent(fileName).path!
+		return baseDocPath.URLByAppendingPathComponent(fileName).path!
 	}
 }

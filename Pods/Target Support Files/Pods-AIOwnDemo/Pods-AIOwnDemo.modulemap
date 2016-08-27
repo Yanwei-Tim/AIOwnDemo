@@ -1,0 +1,6 @@
+framework module Pods_AIOwnDemo {
+  umbrella header "Pods-AIOwnDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}
