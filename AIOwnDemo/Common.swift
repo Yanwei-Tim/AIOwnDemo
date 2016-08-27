@@ -23,12 +23,12 @@ import UIKit
 //	static let sid = ""
 //}
 //
-//struct ViewControllerTitle {
-//	static let guide1 = "guide1"
-//	static let guide2 = "guide2"
-//	static let guide3 = "guide3"
-//	static let guide4 = "guide4"
-//
-//	static let guideViewController = "guideViewController"
-//
-//}
+struct ViewControllerTitle {
+	static let guide1 = "guide1"
+	static let guide2 = "guide2"
+	static let guide3 = "guide3"
+	static let guide4 = "guide4"
+
+	static let guideViewController = "guideViewController"
+
+}
