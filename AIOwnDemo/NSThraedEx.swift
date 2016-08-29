@@ -19,4 +19,11 @@ extension NSThread {
 	class func onMain(block: () -> ()) {
 		NSOperationQueue.mainQueue().addOperationWithBlock(block)
 	}
+
+	// MARK: 延时调用
+	class func afterDelay(delayTime: Double, completion: () -> Void) {
+		let when = dispatch_time(DISPATCH_TIME_NOW, Int64(delayTime * Double(NSEC_PER_SEC)))
+		dispatch_after(when, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), completion)
+	}
 }
+
