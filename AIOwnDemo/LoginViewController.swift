@@ -27,6 +27,9 @@ class LoginViewController: UIViewController {
 
 		userNameOutlet.delegate = self
 		passwordOutlet.delegate = self
+
+//		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(onKeyboardShow), name: UIKeyboardWillShowNotification, object: nil)
+//		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(onKeyboardHide), name: UIKeyboardDidHideNotification, object: nil)
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -89,9 +92,65 @@ class LoginViewController: UIViewController {
 	}
 }
 
+//MARK: 扩展键盘显示和隐藏
+extension LoginViewController {
+	/**
+     UIKeyboardAnimationCurveUserInfoKey = 7;
+     UIKeyboardAnimationDurationUserInfoKey = "0.25";
+     UIKeyboardBoundsUserInfoKey = "NSRect: {{0, 0}, {320, 253}}";
+     UIKeyboardCenterBeginUserInfoKey = "NSPoint: {160, 606.5}";
+     UIKeyboardCenterEndUserInfoKey = "NSPoint: {160, 353.5}";
+     UIKeyboardFrameBeginUserInfoKey = "NSRect: {{0, 480}, {320, 253}}";
+     UIKeyboardFrameEndUserInfoKey = "NSRect: {{0, 227}, {320, 253}}";
+     UIKeyboardIsLocalUserInfoKey = 1;
+     */
+
+	// 键盘显示
+	func onKeyboardShow(notify: NSNotification) {
+//		print("Show \(NSThread.isMainThread(),notify)")
+		if [UIKeyboardDidShowNotification, UIKeyboardWillShowNotification].contains(notify.name) {
+
+			let value = notify.userInfo![UIKeyboardFrameBeginUserInfoKey] as? NSValue
+
+			guard let keyboardRect = value?.CGRectValue() else {
+				return
+			}
+
+			let keyboardHeight = keyboardRect.height
+			UIView.animateWithDuration(1) {
+				self.view.center.y = -keyboardHeight
+			}
+
+		}
+	}
+
+	// 键盘隐藏
+	func onKeyboardHide(notify: NSNotification) {
+//		print("Hide \(NSThread.isMainThread(), notify) ")
+	}
+}
+
 extension LoginViewController: UITextFieldDelegate {
 	func textFieldShouldReturn(textField: UITextField) -> Bool {
-		textField.resignFirstResponder()
+		if textField.returnKeyType == UIReturnKeyType.Next && textField === userNameOutlet {
+			passwordOutlet.becomeFirstResponder()
+		} else if textField == passwordOutlet {
+			textField.resignFirstResponder()
+			if UIScreen.isSmallScreen {
+				UIView.animateWithDuration(0.3) {
+					self.view.center.y += 100
+				}
+			}
+		}
+		return true
+	}
+	func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+		if textField === passwordOutlet && UIScreen.isSmallScreen {
+			UIView.animateWithDuration(0.3) {
+				self.view.center.y -= 100
+			}
+		}
 		return true
 	}
 }
+
