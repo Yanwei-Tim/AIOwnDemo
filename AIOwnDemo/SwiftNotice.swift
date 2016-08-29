@@ -4,7 +4,7 @@
 //
 //  Created by JohnLui on 15/4/15.
 //  Copyright (c) 2015年 com.lvwenhan. All rights reserved.
-//
+//  https://github.com/johnlui/SwiftNotice
 
 import Foundation
 import UIKit
