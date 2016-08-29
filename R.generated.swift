@@ -277,7 +277,7 @@ struct _R: Rswift.Validatable {
     }
     
     struct main: StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = LoginViewController
+      typealias InitialController = NavLauncherViewController
       
       let bundle = _R.hostingBundle
       let guide1ID = StoryboardViewControllerResource<UIViewController>(identifier: "Guide1ID")
@@ -285,7 +285,9 @@ struct _R: Rswift.Validatable {
       let guide3ID = StoryboardViewControllerResource<UIViewController>(identifier: "Guide3ID")
       let guide4ID = StoryboardViewControllerResource<LastViewController>(identifier: "Guide4ID")
       let guideStoryboardID = StoryboardViewControllerResource<Guide2PageViewcontroller>(identifier: "GuideStoryboardID")
+      let loginViewController = StoryboardViewControllerResource<LoginViewController>(identifier: "LoginViewController")
       let name = "Main"
+      let registerViewController = StoryboardViewControllerResource<RegisterViewController>(identifier: "RegisterViewController")
       let testID = StoryboardViewControllerResource<TestViewController>(identifier: "TestID")
       
       func guide1ID(_: Void) -> UIViewController? {
@@ -308,26 +310,37 @@ struct _R: Rswift.Validatable {
         return UIStoryboard(resource: self).instantiateViewController(guideStoryboardID)
       }
       
+      func loginViewController(_: Void) -> LoginViewController? {
+        return UIStoryboard(resource: self).instantiateViewController(loginViewController)
+      }
+      
+      func registerViewController(_: Void) -> RegisterViewController? {
+        return UIStoryboard(resource: self).instantiateViewController(registerViewController)
+      }
+      
       func testID(_: Void) -> TestViewController? {
         return UIStoryboard(resource: self).instantiateViewController(testID)
       }
       
       static func validate() throws {
         if UIImage(named: "guide2") == nil { throw ValidationError(description: "[R.swift] Image named 'guide2' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIImage(named: "btn_bg_fill_down") == nil { throw ValidationError(description: "[R.swift] Image named 'btn_bg_fill_down' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIImage(named: "signup_btn_line_down") == nil { throw ValidationError(description: "[R.swift] Image named 'signup_btn_line_down' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIImage(named: "transparent_bg") == nil { throw ValidationError(description: "[R.swift] Image named 'transparent_bg' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIImage(named: "guide3") == nil { throw ValidationError(description: "[R.swift] Image named 'guide3' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIImage(named: "guide4_2") == nil { throw ValidationError(description: "[R.swift] Image named 'guide4_2' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIImage(named: "signup_btn_line_nor") == nil { throw ValidationError(description: "[R.swift] Image named 'signup_btn_line_nor' is used in storyboard 'Main', but couldn't be loaded.") }
-        if UIImage(named: "btn_bg_fill_down") == nil { throw ValidationError(description: "[R.swift] Image named 'btn_bg_fill_down' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIImage(named: "button_blue_bg_down") == nil { throw ValidationError(description: "[R.swift] Image named 'button_blue_bg_down' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIImage(named: "btn_bg_fill_nor") == nil { throw ValidationError(description: "[R.swift] Image named 'btn_bg_fill_nor' is used in storyboard 'Main', but couldn't be loaded.") }
-        if UIImage(named: "signup_btn_line_down") == nil { throw ValidationError(description: "[R.swift] Image named 'signup_btn_line_down' is used in storyboard 'Main', but couldn't be loaded.") }
-        if UIImage(named: "transparent_bg") == nil { throw ValidationError(description: "[R.swift] Image named 'transparent_bg' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIImage(named: "signup_logo") == nil { throw ValidationError(description: "[R.swift] Image named 'signup_logo' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIImage(named: "guide1") == nil { throw ValidationError(description: "[R.swift] Image named 'guide1' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIImage(named: "button_blue_bg_normal") == nil { throw ValidationError(description: "[R.swift] Image named 'button_blue_bg_normal' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIImage(named: "launcher") == nil { throw ValidationError(description: "[R.swift] Image named 'launcher' is used in storyboard 'Main', but couldn't be loaded.") }
         if _R.storyboard.main().testID() == nil { throw ValidationError(description:"[R.swift] ViewController with identifier 'testID' could not be loaded from storyboard 'Main' as 'TestViewController'.") }
         if _R.storyboard.main().guide1ID() == nil { throw ValidationError(description:"[R.swift] ViewController with identifier 'guide1ID' could not be loaded from storyboard 'Main' as 'UIViewController'.") }
         if _R.storyboard.main().guideStoryboardID() == nil { throw ValidationError(description:"[R.swift] ViewController with identifier 'guideStoryboardID' could not be loaded from storyboard 'Main' as 'Guide2PageViewcontroller'.") }
+        if _R.storyboard.main().loginViewController() == nil { throw ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Main' as 'LoginViewController'.") }
+        if _R.storyboard.main().registerViewController() == nil { throw ValidationError(description:"[R.swift] ViewController with identifier 'registerViewController' could not be loaded from storyboard 'Main' as 'RegisterViewController'.") }
         if _R.storyboard.main().guide2ID() == nil { throw ValidationError(description:"[R.swift] ViewController with identifier 'guide2ID' could not be loaded from storyboard 'Main' as 'UIViewController'.") }
         if _R.storyboard.main().guide3ID() == nil { throw ValidationError(description:"[R.swift] ViewController with identifier 'guide3ID' could not be loaded from storyboard 'Main' as 'UIViewController'.") }
         if _R.storyboard.main().guide4ID() == nil { throw ValidationError(description:"[R.swift] ViewController with identifier 'guide4ID' could not be loaded from storyboard 'Main' as 'LastViewController'.") }

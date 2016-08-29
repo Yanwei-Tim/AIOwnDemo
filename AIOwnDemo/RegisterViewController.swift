@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  RegisterViewController.swift
 //  AIOwnDemo
 //
 //  Created by angcyo on 16/08/28.
@@ -8,22 +8,15 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
-
-	@IBOutlet weak var userNameOutlet: UITextField!
-	@IBOutlet weak var passwordOutlet: UITextField!
+class RegisterViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
 		// Do any additional setup after loading the view.
-
 		navigationController?.navigationBar.show()
 		navigationController?.navigationBar.removeBGView()
-		navigationItem.setTitleTextAndColor(UIColor.whiteColor(), title: "登录")
-
-		userNameOutlet.setValue(UIColor.whiteColor(), forKeyPath: "placeholderLabel.textColor")
-		passwordOutlet.setValue(UIColor.whiteColor(), forKeyPath: "placeholderLabel.textColor")
+		navigationItem.setTitleColor(UIColor.whiteColor())
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -41,14 +34,14 @@ class LoginViewController: UIViewController {
 	 }
 	 */
 
-//    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-//        return .LightContent
-//    }
+	// MARK: 白色状态栏
+	override func preferredStatusBarStyle() -> UIStatusBarStyle {
+		return .LightContent
+	}
+
+	// MARK: 不隐藏状态栏
 	override func prefersStatusBarHidden() -> Bool {
 		return false
 	}
 
-	override func preferredStatusBarStyle() -> UIStatusBarStyle {
-		return .LightContent
-	}
 }
