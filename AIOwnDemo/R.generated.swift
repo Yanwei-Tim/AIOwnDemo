@@ -26,7 +26,7 @@ struct R: Rswift.Validatable {
     private init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 23 images.
+  /// This `R.image` struct is generated, and contains static references to 27 images.
   struct image {
     /// Image `bg5`.
     static let bg5 = ImageResource(bundle: _R.hostingBundle, name: "bg5")
@@ -46,6 +46,10 @@ struct R: Rswift.Validatable {
     static let button_blue_bg_down = ImageResource(bundle: _R.hostingBundle, name: "button_blue_bg_down")
     /// Image `button_blue_bg_normal`.
     static let button_blue_bg_normal = ImageResource(bundle: _R.hostingBundle, name: "button_blue_bg_normal")
+    /// Image `checkmark`.
+    static let checkmark = ImageResource(bundle: _R.hostingBundle, name: "checkmark")
+    /// Image `cross`.
+    static let cross = ImageResource(bundle: _R.hostingBundle, name: "cross")
     /// Image `guide1`.
     static let guide1 = ImageResource(bundle: _R.hostingBundle, name: "guide1")
     /// Image `guide2`.
@@ -60,6 +64,10 @@ struct R: Rswift.Validatable {
     static let lOGO = ImageResource(bundle: _R.hostingBundle, name: "LOGO")
     /// Image `launcher`.
     static let launcher = ImageResource(bundle: _R.hostingBundle, name: "launcher")
+    /// Image `progress_activity`.
+    static let progress_activity = ImageResource(bundle: _R.hostingBundle, name: "progress_activity")
+    /// Image `progress_circular`.
+    static let progress_circular = ImageResource(bundle: _R.hostingBundle, name: "progress_circular")
     /// Image `qidongbeijing`.
     static let qidongbeijing = ImageResource(bundle: _R.hostingBundle, name: "qidongbeijing")
     /// Image `signup_btn_line_down`.
@@ -120,6 +128,16 @@ struct R: Rswift.Validatable {
       return UIImage(resource: R.image.button_blue_bg_normal, compatibleWithTraitCollection: traitCollection)
     }
     
+    /// `UIImage(named: "checkmark", bundle: ..., traitCollection: ...)`
+    static func checkmark(compatibleWithTraitCollection traitCollection: UITraitCollection? = nil) -> UIImage? {
+      return UIImage(resource: R.image.checkmark, compatibleWithTraitCollection: traitCollection)
+    }
+    
+    /// `UIImage(named: "cross", bundle: ..., traitCollection: ...)`
+    static func cross(compatibleWithTraitCollection traitCollection: UITraitCollection? = nil) -> UIImage? {
+      return UIImage(resource: R.image.cross, compatibleWithTraitCollection: traitCollection)
+    }
+    
     /// `UIImage(named: "guide1", bundle: ..., traitCollection: ...)`
     static func guide1(compatibleWithTraitCollection traitCollection: UITraitCollection? = nil) -> UIImage? {
       return UIImage(resource: R.image.guide1, compatibleWithTraitCollection: traitCollection)
@@ -153,6 +171,16 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "launcher", bundle: ..., traitCollection: ...)`
     static func launcher(compatibleWithTraitCollection traitCollection: UITraitCollection? = nil) -> UIImage? {
       return UIImage(resource: R.image.launcher, compatibleWithTraitCollection: traitCollection)
+    }
+    
+    /// `UIImage(named: "progress_activity", bundle: ..., traitCollection: ...)`
+    static func progress_activity(compatibleWithTraitCollection traitCollection: UITraitCollection? = nil) -> UIImage? {
+      return UIImage(resource: R.image.progress_activity, compatibleWithTraitCollection: traitCollection)
+    }
+    
+    /// `UIImage(named: "progress_circular", bundle: ..., traitCollection: ...)`
+    static func progress_circular(compatibleWithTraitCollection traitCollection: UITraitCollection? = nil) -> UIImage? {
+      return UIImage(resource: R.image.progress_circular, compatibleWithTraitCollection: traitCollection)
     }
     
     /// `UIImage(named: "qidongbeijing", bundle: ..., traitCollection: ...)`
@@ -277,7 +305,7 @@ struct _R: Rswift.Validatable {
     }
     
     struct main: StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = LauncherViewController
+      typealias InitialController = NavLauncherViewController
       
       let bundle = _R.hostingBundle
       let guide1ID = StoryboardViewControllerResource<UIViewController>(identifier: "Guide1ID")
@@ -287,8 +315,6 @@ struct _R: Rswift.Validatable {
       let guideStoryboardID = StoryboardViewControllerResource<Guide2PageViewcontroller>(identifier: "GuideStoryboardID")
       let loginViewController = StoryboardViewControllerResource<LoginViewController>(identifier: "LoginViewController")
       let name = "Main"
-      let navigationLogin = StoryboardViewControllerResource<UINavigationController>(identifier: "NavigationLogin")
-      let navigationRegister = StoryboardViewControllerResource<UINavigationController>(identifier: "NavigationRegister")
       let registerViewController = StoryboardViewControllerResource<RegisterViewController>(identifier: "RegisterViewController")
       let testID = StoryboardViewControllerResource<TestViewController>(identifier: "TestID")
       
@@ -316,14 +342,6 @@ struct _R: Rswift.Validatable {
         return UIStoryboard(resource: self).instantiateViewController(loginViewController)
       }
       
-      func navigationLogin(_: Void) -> UINavigationController? {
-        return UIStoryboard(resource: self).instantiateViewController(navigationLogin)
-      }
-      
-      func navigationRegister(_: Void) -> UINavigationController? {
-        return UIStoryboard(resource: self).instantiateViewController(navigationRegister)
-      }
-      
       func registerViewController(_: Void) -> RegisterViewController? {
         return UIStoryboard(resource: self).instantiateViewController(registerViewController)
       }
@@ -333,7 +351,6 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
-        if UIImage(named: "btn_back_blue_nor") == nil { throw ValidationError(description: "[R.swift] Image named 'btn_back_blue_nor' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIImage(named: "guide2") == nil { throw ValidationError(description: "[R.swift] Image named 'guide2' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIImage(named: "btn_bg_fill_down") == nil { throw ValidationError(description: "[R.swift] Image named 'btn_bg_fill_down' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIImage(named: "signup_btn_line_down") == nil { throw ValidationError(description: "[R.swift] Image named 'signup_btn_line_down' is used in storyboard 'Main', but couldn't be loaded.") }
@@ -343,9 +360,10 @@ struct _R: Rswift.Validatable {
         if UIImage(named: "signup_btn_line_nor") == nil { throw ValidationError(description: "[R.swift] Image named 'signup_btn_line_nor' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIImage(named: "button_blue_bg_down") == nil { throw ValidationError(description: "[R.swift] Image named 'button_blue_bg_down' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIImage(named: "btn_bg_fill_nor") == nil { throw ValidationError(description: "[R.swift] Image named 'btn_bg_fill_nor' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIImage(named: "signup_logo") == nil { throw ValidationError(description: "[R.swift] Image named 'signup_logo' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIImage(named: "guide1") == nil { throw ValidationError(description: "[R.swift] Image named 'guide1' is used in storyboard 'Main', but couldn't be loaded.") }
-        if UIImage(named: "launcher") == nil { throw ValidationError(description: "[R.swift] Image named 'launcher' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIImage(named: "button_blue_bg_normal") == nil { throw ValidationError(description: "[R.swift] Image named 'button_blue_bg_normal' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIImage(named: "launcher") == nil { throw ValidationError(description: "[R.swift] Image named 'launcher' is used in storyboard 'Main', but couldn't be loaded.") }
         if _R.storyboard.main().testID() == nil { throw ValidationError(description:"[R.swift] ViewController with identifier 'testID' could not be loaded from storyboard 'Main' as 'TestViewController'.") }
         if _R.storyboard.main().guide1ID() == nil { throw ValidationError(description:"[R.swift] ViewController with identifier 'guide1ID' could not be loaded from storyboard 'Main' as 'UIViewController'.") }
         if _R.storyboard.main().guideStoryboardID() == nil { throw ValidationError(description:"[R.swift] ViewController with identifier 'guideStoryboardID' could not be loaded from storyboard 'Main' as 'Guide2PageViewcontroller'.") }
@@ -354,8 +372,6 @@ struct _R: Rswift.Validatable {
         if _R.storyboard.main().guide2ID() == nil { throw ValidationError(description:"[R.swift] ViewController with identifier 'guide2ID' could not be loaded from storyboard 'Main' as 'UIViewController'.") }
         if _R.storyboard.main().guide3ID() == nil { throw ValidationError(description:"[R.swift] ViewController with identifier 'guide3ID' could not be loaded from storyboard 'Main' as 'UIViewController'.") }
         if _R.storyboard.main().guide4ID() == nil { throw ValidationError(description:"[R.swift] ViewController with identifier 'guide4ID' could not be loaded from storyboard 'Main' as 'LastViewController'.") }
-        if _R.storyboard.main().navigationLogin() == nil { throw ValidationError(description:"[R.swift] ViewController with identifier 'navigationLogin' could not be loaded from storyboard 'Main' as 'UINavigationController'.") }
-        if _R.storyboard.main().navigationRegister() == nil { throw ValidationError(description:"[R.swift] ViewController with identifier 'navigationRegister' could not be loaded from storyboard 'Main' as 'UINavigationController'.") }
       }
       
       private init() {}
