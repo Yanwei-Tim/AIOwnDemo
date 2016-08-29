@@ -341,6 +341,9 @@
                                 <state key="normal" title="Forget ?">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onForgetTappend:" destination="p3n-gm-4gD" eventType="touchUpInside" id="jhb-Bm-ySR"/>
+                                </connections>
                             </button>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="signup_logo" translatesAutoresizingMaskIntoConstraints="NO" id="AXC-Tg-15x">
                                 <rect key="frame" x="242" y="554" width="116" height="26"/>
@@ -352,6 +355,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted" image="transparent_bg" backgroundImage="signup_btn_line_down"/>
+                                <connections>
+                                    <action selector="onLoginTappend:" destination="p3n-gm-4gD" eventType="touchUpInside" id="27c-uJ-yam"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.043137254901960784" green="0.043137254901960784" blue="0.043137254901960784" alpha="1" colorSpace="calibratedRGB"/>

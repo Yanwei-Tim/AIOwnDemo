@@ -24,6 +24,9 @@ class LoginViewController: UIViewController {
 
 		userNameOutlet.setValue(UIColor.whiteColor(), forKeyPath: "placeholderLabel.textColor")
 		passwordOutlet.setValue(UIColor.whiteColor(), forKeyPath: "placeholderLabel.textColor")
+
+		userNameOutlet.delegate = self
+		passwordOutlet.delegate = self
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -41,14 +44,45 @@ class LoginViewController: UIViewController {
 	 }
 	 */
 
-//    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-//        return .LightContent
-//    }
 	override func prefersStatusBarHidden() -> Bool {
 		return false
 	}
 
 	override func preferredStatusBarStyle() -> UIStatusBarStyle {
 		return .LightContent
+	}
+
+	override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+		userNameOutlet.resignFirstResponder()
+		passwordOutlet.resignFirstResponder()
+	}
+
+	@IBAction func onLoginTappend(sender: AnyObject) {
+//		JHProgressHUD.sharedHUD.showInWindow()
+		JHProgressHUD.sharedHUD.showInWindow(withHeader: "Header", andFooter: "Footer")
+	}
+
+	@IBAction func onForgetTappend(sender: AnyObject) {
+	}
+
+	func addHUD() {
+		let label = UILabel()
+		label.text = "HUD...Test"
+		label.textColor = UIColor.whiteColor()
+		label.sizeToFit()
+		// label.backgroundColor = UIColor.greenColor()
+		label.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
+		label.layer.cornerRadius = 10
+		label.layer.borderWidth = 2
+		label.layer.borderColor = UIColor.blueColor().CGColor
+		// label.layer.backgroundColor = UIColor.greenColor().CGColor
+		app.window?.addSubview(label)
+	}
+}
+
+extension LoginViewController: UITextFieldDelegate {
+	func textFieldShouldReturn(textField: UITextField) -> Bool {
+		textField.resignFirstResponder()
+		return true
 	}
 }
