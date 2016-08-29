@@ -26,7 +26,7 @@ struct R: Rswift.Validatable {
     private init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 23 images.
+  /// This `R.image` struct is generated, and contains static references to 27 images.
   struct image {
     /// Image `bg5`.
     static let bg5 = ImageResource(bundle: _R.hostingBundle, name: "bg5")
@@ -46,6 +46,10 @@ struct R: Rswift.Validatable {
     static let button_blue_bg_down = ImageResource(bundle: _R.hostingBundle, name: "button_blue_bg_down")
     /// Image `button_blue_bg_normal`.
     static let button_blue_bg_normal = ImageResource(bundle: _R.hostingBundle, name: "button_blue_bg_normal")
+    /// Image `checkmark`.
+    static let checkmark = ImageResource(bundle: _R.hostingBundle, name: "checkmark")
+    /// Image `cross`.
+    static let cross = ImageResource(bundle: _R.hostingBundle, name: "cross")
     /// Image `guide1`.
     static let guide1 = ImageResource(bundle: _R.hostingBundle, name: "guide1")
     /// Image `guide2`.
@@ -60,6 +64,10 @@ struct R: Rswift.Validatable {
     static let lOGO = ImageResource(bundle: _R.hostingBundle, name: "LOGO")
     /// Image `launcher`.
     static let launcher = ImageResource(bundle: _R.hostingBundle, name: "launcher")
+    /// Image `progress_activity`.
+    static let progress_activity = ImageResource(bundle: _R.hostingBundle, name: "progress_activity")
+    /// Image `progress_circular`.
+    static let progress_circular = ImageResource(bundle: _R.hostingBundle, name: "progress_circular")
     /// Image `qidongbeijing`.
     static let qidongbeijing = ImageResource(bundle: _R.hostingBundle, name: "qidongbeijing")
     /// Image `signup_btn_line_down`.
@@ -120,6 +128,16 @@ struct R: Rswift.Validatable {
       return UIImage(resource: R.image.button_blue_bg_normal, compatibleWithTraitCollection: traitCollection)
     }
     
+    /// `UIImage(named: "checkmark", bundle: ..., traitCollection: ...)`
+    static func checkmark(compatibleWithTraitCollection traitCollection: UITraitCollection? = nil) -> UIImage? {
+      return UIImage(resource: R.image.checkmark, compatibleWithTraitCollection: traitCollection)
+    }
+    
+    /// `UIImage(named: "cross", bundle: ..., traitCollection: ...)`
+    static func cross(compatibleWithTraitCollection traitCollection: UITraitCollection? = nil) -> UIImage? {
+      return UIImage(resource: R.image.cross, compatibleWithTraitCollection: traitCollection)
+    }
+    
     /// `UIImage(named: "guide1", bundle: ..., traitCollection: ...)`
     static func guide1(compatibleWithTraitCollection traitCollection: UITraitCollection? = nil) -> UIImage? {
       return UIImage(resource: R.image.guide1, compatibleWithTraitCollection: traitCollection)
@@ -153,6 +171,16 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "launcher", bundle: ..., traitCollection: ...)`
     static func launcher(compatibleWithTraitCollection traitCollection: UITraitCollection? = nil) -> UIImage? {
       return UIImage(resource: R.image.launcher, compatibleWithTraitCollection: traitCollection)
+    }
+    
+    /// `UIImage(named: "progress_activity", bundle: ..., traitCollection: ...)`
+    static func progress_activity(compatibleWithTraitCollection traitCollection: UITraitCollection? = nil) -> UIImage? {
+      return UIImage(resource: R.image.progress_activity, compatibleWithTraitCollection: traitCollection)
+    }
+    
+    /// `UIImage(named: "progress_circular", bundle: ..., traitCollection: ...)`
+    static func progress_circular(compatibleWithTraitCollection traitCollection: UITraitCollection? = nil) -> UIImage? {
+      return UIImage(resource: R.image.progress_circular, compatibleWithTraitCollection: traitCollection)
     }
     
     /// `UIImage(named: "qidongbeijing", bundle: ..., traitCollection: ...)`

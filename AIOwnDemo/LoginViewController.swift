@@ -63,6 +63,10 @@ class LoginViewController: UIViewController {
 	}
 
 	@IBAction func onForgetTappend(sender: AnyObject) {
+//		HUD.show(HUDContentType.Progress)
+//		HUD.show(HUDContentType.Success)
+		HUD.flash(HUDContentType.Success, delay: 2)
+//		HUD.flash(HUDContentType.Progress)
 	}
 
 	func addHUD() {
