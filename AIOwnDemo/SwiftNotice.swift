@@ -18,6 +18,9 @@ extension UIViewController {
 	func noticeTop(text: String, autoClear: Bool = true, autoClearTime: Int = 1) {
 		SwiftNotice.noticeOnStatusBar(text, autoClear: autoClear, autoClearTime: autoClearTime)
 	}
+	func noticeTop(text: String, backgroundColor: UIColor, autoClear: Bool = true, autoClearTime: Int = 1) {
+		SwiftNotice.noticeOnStatusBar(text, backgroundColor: backgroundColor, autoClear: autoClear, autoClearTime: autoClearTime)
+	}
 
 	// new apis from v3.3
 	func noticeSuccess(text: String, autoClear: Bool = false, autoClearTime: Int = 3) {
@@ -107,12 +110,16 @@ class SwiftNotice: NSObject {
 	}
 
 	static func noticeOnStatusBar(text: String, autoClear: Bool, autoClearTime: Int) {
+		noticeOnStatusBar(text, backgroundColor: UIColor(red: 0x6a / 0x100, green: 0xb4 / 0x100, blue: 0x9f / 0x100, alpha: 1)
+			, autoClear: autoClear, autoClearTime: autoClearTime)
+	}
+
+	static func noticeOnStatusBar(text: String, backgroundColor: UIColor, autoClear: Bool, autoClearTime: Int) {
 		let frame = UIApplication.sharedApplication().statusBarFrame
 		let window = UIWindow()
 		window.backgroundColor = UIColor.clearColor()
 		let view = UIView()
-		view.backgroundColor = UIColor(red: 0x6a / 0x100, green: 0xb4 / 0x100, blue: 0x9f / 0x100, alpha: 1)
-//		view.backgroundColor = UIColor.redColor()
+		view.backgroundColor = backgroundColor// view.backgroundColor = UIColor.redColor()
 
 		let label = UILabel(frame: frame)
 		label.textAlignment = NSTextAlignment.Center

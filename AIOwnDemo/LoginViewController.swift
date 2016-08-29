@@ -59,14 +59,19 @@ class LoginViewController: UIViewController {
 
 	@IBAction func onLoginTappend(sender: AnyObject) {
 //		JHProgressHUD.sharedHUD.showInWindow()
-		JHProgressHUD.sharedHUD.showInWindow(withHeader: "Header", andFooter: "Footer")
+		JHProgressHUD.sharedHUD.showInWindow(withHeader: nil, andFooter: "登录中...")
+		GCD.afterDelay(1) {
+			JHProgressHUD.sharedHUD.hide()
+		}
 	}
 
 	@IBAction func onForgetTappend(sender: AnyObject) {
 //		HUD.show(HUDContentType.Progress)
 //		HUD.show(HUDContentType.Success)
-		HUD.flash(HUDContentType.Success, delay: 2)
+//		HUD.flash(HUDContentType.Success, delay: 2)
 //		HUD.flash(HUDContentType.Progress)
+		HUD.flash(HUDContentType.Error)
+		noticeTop("忘记密码了吗?", backgroundColor: UIColor.redColor())
 	}
 
 	func addHUD() {

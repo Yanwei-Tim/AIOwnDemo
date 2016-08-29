@@ -34,4 +34,11 @@ class GCD {
 	class func onMainAsync(block: () -> ()) {
 		dispatch_async(main_queue, block)
 	}
+
+	// MARK: 延时调用
+	class func afterDelay(delayTime: Double, mainQueue: Bool = true, completion: () -> Void) {
+		let when = dispatch_time(DISPATCH_TIME_NOW, Int64(delayTime * Double(NSEC_PER_SEC)))
+		let queue = mainQueue ? dispatch_get_main_queue() : dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+		dispatch_after(when, queue, completion)
+	}
 }
