@@ -16,6 +16,8 @@ class LauncherViewController: UIViewController {
 
 	var test: Bool!
 
+	var waitWindow: UIWindow!
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
@@ -23,9 +25,6 @@ class LauncherViewController: UIViewController {
 		// checkNeedShowGuideViewController()
 //		stackView.hidden = true
 		isNeesGuide = true
-
-		stackView.alpha = 0
-
 		navigationController?.navigationBar.hide()
 	}
 
@@ -35,6 +34,7 @@ class LauncherViewController: UIViewController {
 	}
 
 	override func viewWillAppear(animated: Bool) {
+		stackView.alpha = 0
 		// checkNeedShowGuideViewController()
 	}
 
@@ -94,10 +94,18 @@ extension LauncherViewController {
 		if isNeesGuide {
 			showGuideViewController()
 		} else {
-			UIView.animateWithDuration(0.3) {
-//				self.stackView.hidden = false
+//			UIView.animateWithDuration(0.3) {
+////				self.stackView.hidden = false
+//				self.stackView.alpha = 1
+//			}
+			pleaseWait()
+			waitWindow = getLastWindow()
+			UIView.animateWithDuration(0.3, animations: {
 				self.stackView.alpha = 1
-			}
+				}, completion: { completion in
+				self.hideNotice(self.waitWindow)
+				self.waitWindow = nil
+			})
 
 //			UIView.beginAnimations(nil, context: nil)
 //			UIView.setAnimationDuration(0.3)

@@ -26,7 +26,7 @@ struct R: Rswift.Validatable {
     private init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 27 images.
+  /// This `R.image` struct is generated, and contains static references to 34 images.
   struct image {
     /// Image `bg5`.
     static let bg5 = ImageResource(bundle: _R.hostingBundle, name: "bg5")
@@ -64,6 +64,20 @@ struct R: Rswift.Validatable {
     static let lOGO = ImageResource(bundle: _R.hostingBundle, name: "LOGO")
     /// Image `launcher`.
     static let launcher = ImageResource(bundle: _R.hostingBundle, name: "launcher")
+    /// Image `loading1`.
+    static let loading1 = ImageResource(bundle: _R.hostingBundle, name: "loading1")
+    /// Image `loading2`.
+    static let loading2 = ImageResource(bundle: _R.hostingBundle, name: "loading2")
+    /// Image `loading3`.
+    static let loading3 = ImageResource(bundle: _R.hostingBundle, name: "loading3")
+    /// Image `loading4`.
+    static let loading4 = ImageResource(bundle: _R.hostingBundle, name: "loading4")
+    /// Image `loading5`.
+    static let loading5 = ImageResource(bundle: _R.hostingBundle, name: "loading5")
+    /// Image `loading6`.
+    static let loading6 = ImageResource(bundle: _R.hostingBundle, name: "loading6")
+    /// Image `loading7`.
+    static let loading7 = ImageResource(bundle: _R.hostingBundle, name: "loading7")
     /// Image `progress_activity`.
     static let progress_activity = ImageResource(bundle: _R.hostingBundle, name: "progress_activity")
     /// Image `progress_circular`.
@@ -171,6 +185,41 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "launcher", bundle: ..., traitCollection: ...)`
     static func launcher(compatibleWithTraitCollection traitCollection: UITraitCollection? = nil) -> UIImage? {
       return UIImage(resource: R.image.launcher, compatibleWithTraitCollection: traitCollection)
+    }
+    
+    /// `UIImage(named: "loading1", bundle: ..., traitCollection: ...)`
+    static func loading1(compatibleWithTraitCollection traitCollection: UITraitCollection? = nil) -> UIImage? {
+      return UIImage(resource: R.image.loading1, compatibleWithTraitCollection: traitCollection)
+    }
+    
+    /// `UIImage(named: "loading2", bundle: ..., traitCollection: ...)`
+    static func loading2(compatibleWithTraitCollection traitCollection: UITraitCollection? = nil) -> UIImage? {
+      return UIImage(resource: R.image.loading2, compatibleWithTraitCollection: traitCollection)
+    }
+    
+    /// `UIImage(named: "loading3", bundle: ..., traitCollection: ...)`
+    static func loading3(compatibleWithTraitCollection traitCollection: UITraitCollection? = nil) -> UIImage? {
+      return UIImage(resource: R.image.loading3, compatibleWithTraitCollection: traitCollection)
+    }
+    
+    /// `UIImage(named: "loading4", bundle: ..., traitCollection: ...)`
+    static func loading4(compatibleWithTraitCollection traitCollection: UITraitCollection? = nil) -> UIImage? {
+      return UIImage(resource: R.image.loading4, compatibleWithTraitCollection: traitCollection)
+    }
+    
+    /// `UIImage(named: "loading5", bundle: ..., traitCollection: ...)`
+    static func loading5(compatibleWithTraitCollection traitCollection: UITraitCollection? = nil) -> UIImage? {
+      return UIImage(resource: R.image.loading5, compatibleWithTraitCollection: traitCollection)
+    }
+    
+    /// `UIImage(named: "loading6", bundle: ..., traitCollection: ...)`
+    static func loading6(compatibleWithTraitCollection traitCollection: UITraitCollection? = nil) -> UIImage? {
+      return UIImage(resource: R.image.loading6, compatibleWithTraitCollection: traitCollection)
+    }
+    
+    /// `UIImage(named: "loading7", bundle: ..., traitCollection: ...)`
+    static func loading7(compatibleWithTraitCollection traitCollection: UITraitCollection? = nil) -> UIImage? {
+      return UIImage(resource: R.image.loading7, compatibleWithTraitCollection: traitCollection)
     }
     
     /// `UIImage(named: "progress_activity", bundle: ..., traitCollection: ...)`
