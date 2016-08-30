@@ -110,8 +110,9 @@ class SwiftNotice: NSObject {
 	}
 
 	static func noticeOnStatusBar(text: String, autoClear: Bool, autoClearTime: Int) {
-		noticeOnStatusBar(text, backgroundColor: UIColor(red: 0x6a / 0x100, green: 0xb4 / 0x100, blue: 0x9f / 0x100, alpha: 1)
+		noticeOnStatusBar(text, backgroundColor: UIColor(red: 0.00, green: 0.56, blue: 0.33, alpha: 1.00)
 			, autoClear: autoClear, autoClearTime: autoClearTime)
+
 	}
 
 	static func noticeOnStatusBar(text: String, backgroundColor: UIColor, autoClear: Bool, autoClearTime: Int) {
@@ -140,9 +141,14 @@ class SwiftNotice: NSObject {
 		windows.append(window)
 		lastWindow = window
 
-		if autoClear {
-			let selector = #selector(SwiftNotice.hideNotice(_:))
-			self.performSelector(selector, withObject: window, afterDelay: NSTimeInterval(autoClearTime))
+		window.center.x = screenWidth * 3 / 2
+		UIView.animateWithDuration(0.3, animations: {
+			window.center.x = screenWidth / 2
+		}) { completion in
+			if autoClear {
+				let selector = #selector(SwiftNotice.hideNotice(_:))
+				self.performSelector(selector, withObject: window, afterDelay: NSTimeInterval(autoClearTime))
+			}
 		}
 	}
 	static func wait(imageNames: Array<UIImage> = Array<UIImage>(), timeInterval: Int = 0) {
@@ -274,7 +280,13 @@ class SwiftNotice: NSObject {
 				}
 				return item == window
 			}) {
-				windows.removeAtIndex(index)
+				UIView.animateWithDuration(0.3, animations: {
+					let window = windows[index]
+					window.alpha = 0
+					}, completion: { (completion) in
+					windows.removeAtIndex(index)
+					}
+				)
 			}
 		}
 	}

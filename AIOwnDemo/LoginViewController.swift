@@ -22,8 +22,8 @@ class LoginViewController: UIViewController {
 		navigationController?.navigationBar.removeBGView()
 		navigationItem.setTitleTextAndColor(UIColor.whiteColor(), title: "登录")
 
-		userNameOutlet.setValue(UIColor.whiteColor(), forKeyPath: "placeholderLabel.textColor")
-		passwordOutlet.setValue(UIColor.whiteColor(), forKeyPath: "placeholderLabel.textColor")
+		userNameOutlet.setPlaceholderLabelColor(UIColor.whiteColor())
+		passwordOutlet.setPlaceholderLabelColor(UIColor.whiteColor())
 
 		userNameOutlet.delegate = self
 		passwordOutlet.delegate = self
@@ -64,7 +64,7 @@ class LoginViewController: UIViewController {
 //		JHProgressHUD.sharedHUD.showInWindow()
 
 		if userNameOutlet.text!.isEmpty || passwordOutlet.text!.isEmpty {
-			showAlertView("提示", message: "请输入用户名/密码")
+			showAlertView(title: "提示", message: "请输入用户名/密码")
 			return
 		}
 
@@ -166,7 +166,7 @@ extension LoginViewController: UITextFieldDelegate {
 		}
 
 		UIView.animateWithDuration(0.3) {
-			view.center.y = height / 2
+			view.center.y = screenHeight / 2
 		}
 	}
 
@@ -180,7 +180,7 @@ extension LoginViewController: UITextFieldDelegate {
 		}
 
 		UIView.animateWithDuration(0.3) {
-			view.center.y = height / 2 - 100
+			view.center.y = screenHeight / 2 - 100
 		}
 	}
 }

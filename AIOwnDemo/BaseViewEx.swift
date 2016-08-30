@@ -8,14 +8,14 @@
 
 import UIKit
 
-let width = UIScreen.mainScreen().bounds.width
-let height = UIScreen.mainScreen().bounds.height
+let screenWidth = UIScreen.mainScreen().bounds.width
+let screenHeight = UIScreen.mainScreen().bounds.height
 
 extension UINavigationBar {
 	// MARK: 去掉NavigationBar的背景和横线
 	func removeBGView() {
 		let imageView = subviews[0]
-		if imageView.isKindOfClass(UIImageView) && width == imageView.bounds.width {
+		if imageView.isKindOfClass(UIImageView) && screenWidth == imageView.bounds.width {
 			imageView.removeFromSuperview()
 		}
 	}
@@ -36,12 +36,12 @@ extension UITabBar {
 	func removeBGView() {
 		// 去掉TabBar中的横线
 		let lineView = subviews[subviews.count - 1]
-		if lineView.isKindOfClass(UIImageView) && width == lineView.bounds.width {
+		if lineView.isKindOfClass(UIImageView) && screenWidth == lineView.bounds.width {
 			lineView.removeFromSuperview()
 		}
 		// 去掉TabBar中的背景
 		let bgView = subviews[0]
-		if bgView.isKindOfClass(UIImageView) && width == bgView.bounds.width {
+		if bgView.isKindOfClass(UIImageView) && screenWidth == bgView.bounds.width {
 			bgView.removeFromSuperview()
 		}
 	}

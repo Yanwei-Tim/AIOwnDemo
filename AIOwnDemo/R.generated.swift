@@ -288,8 +288,23 @@ struct R: Rswift.Validatable {
     private init() {}
   }
   
-  /// This `R.segue` struct is generated, and contains static references to 0 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
   struct segue {
+    /// This struct is generated for `RegisterViewController`, and contains static references to 1 segues.
+    struct registerViewController {
+      /// Segue identifier `RegisterNext`.
+      static let registerNext: StoryboardSegueIdentifier<UIStoryboardSegue, RegisterViewController, RegisterNextViewController> = StoryboardSegueIdentifier(identifier: "RegisterNext")
+      
+      /// Optionally returns a typed version of segue `RegisterNext`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func registerNext(segue segue: UIStoryboardSegue) -> TypedStoryboardSegueInfo<UIStoryboardSegue, RegisterViewController, RegisterNextViewController>? {
+        return TypedStoryboardSegueInfo(segueIdentifier: R.segue.registerViewController.registerNext, segue: segue)
+      }
+      
+      private init() {}
+    }
+    
     private init() {}
   }
   

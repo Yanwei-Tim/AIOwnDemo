@@ -21,6 +21,7 @@ class UITextField_AutoSize: UITextField {
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
 		autoFontSize()
+		setPlaceholderLabelColor(textColor)
 	}
 
 }

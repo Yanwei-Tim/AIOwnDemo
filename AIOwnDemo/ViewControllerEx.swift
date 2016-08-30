@@ -9,7 +9,7 @@
 import UIKit
 extension UIViewController {
 	// MARK: 显示标准的2个按钮的对话框
-	func showAlertView(title: String? = nil, message: String? = nil, preferredStyle: UIAlertControllerStyle = .Alert,
+	func showAlertView(title title: String? = nil, message: String? = nil, preferredStyle: UIAlertControllerStyle = .Alert,
 		cancelTitle: String? = "取消", okTitle: String? = "确定", onCancel: ((UIAlertAction) -> Void)? = nil, onOk: ((UIAlertAction) -> Void)? = nil) {
 			let alertView = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
 

@@ -8,7 +8,11 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: BaseEditFieldViewController {
+
+	@IBOutlet weak var phoneNumberOutlet: UITextField_AutoSize!
+	@IBOutlet weak var passwordOutlet: UITextField_AutoSize!
+	@IBOutlet weak var passwordRepeatOutlet: UITextField_AutoSize!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -17,6 +21,21 @@ class RegisterViewController: UIViewController {
 		navigationController?.navigationBar.show()
 		navigationController?.navigationBar.removeBGView()
 		navigationItem.setTitleColor(UIColor.whiteColor())
+
+		phoneNumberOutlet.returnKeyType = .Next
+		passwordOutlet.returnKeyType = .Next
+		passwordRepeatOutlet.returnKeyType = .Done
+
+		phoneNumberOutlet.keyboardType = .NumberPad
+
+		passwordOutlet.secureTextEntry = true
+		passwordRepeatOutlet.secureTextEntry = true
+
+		phoneNumberOutlet.delegate = self
+		passwordOutlet.delegate = self
+		passwordRepeatOutlet.delegate = self
+
+		translationHeight = 40
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -44,4 +63,45 @@ class RegisterViewController: UIViewController {
 		return false
 	}
 
+	// MARK:下一步
+	override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+		if identifier == R.segue.registerViewController.registerNext.identifier {
+			if phoneNumberOutlet.isTextEmpty() || passwordOutlet.isTextEmpty() || passwordRepeatOutlet.isTextEmpty() {
+				showAlertView(title: "提示", message: "请检查输入信息!")
+				return false
+			}
+		}
+
+		return true
+	}
+}
+
+extension RegisterViewController {
+	func textFieldDidBeginEditing(textField: UITextField) {
+		if textField === passwordRepeatOutlet {
+			translationViewTop()
+		}
+	}
+
+	func textFieldShouldReturn(textField: UITextField) -> Bool {
+		if textField == phoneNumberOutlet {
+			passwordOutlet.becomeFirstResponder()
+		} else if textField == passwordOutlet {
+			passwordRepeatOutlet.becomeFirstResponder()
+		} else {
+			textField.resignFirstResponder()
+		}
+		return true
+	}
+
+	func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+		// 显示文本输入框能输入的最大字符数
+		if let textLenght = textField.text?.endIndex.toInt() where textField == phoneNumberOutlet {
+			let appendLenght = string.endIndex.toInt()
+			if textLenght - range.length + appendLenght > 11 {
+				return false
+			}
+		}
+		return true
+	}
 }

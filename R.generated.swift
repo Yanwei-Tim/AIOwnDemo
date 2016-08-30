@@ -288,8 +288,23 @@ struct R: Rswift.Validatable {
     private init() {}
   }
   
-  /// This `R.segue` struct is generated, and contains static references to 0 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
   struct segue {
+    /// This struct is generated for `RegisterViewController`, and contains static references to 1 segues.
+    struct registerViewController {
+      /// Segue identifier `RegisterNext`.
+      static let registerNext: StoryboardSegueIdentifier<UIStoryboardSegue, RegisterViewController, RegisterNextViewController> = StoryboardSegueIdentifier(identifier: "RegisterNext")
+      
+      /// Optionally returns a typed version of segue `RegisterNext`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func registerNext(segue segue: UIStoryboardSegue) -> TypedStoryboardSegueInfo<UIStoryboardSegue, RegisterViewController, RegisterNextViewController>? {
+        return TypedStoryboardSegueInfo(segueIdentifier: R.segue.registerViewController.registerNext, segue: segue)
+      }
+      
+      private init() {}
+    }
+    
     private init() {}
   }
   
@@ -407,6 +422,8 @@ struct _R: Rswift.Validatable {
         if UIImage(named: "guide3") == nil { throw ValidationError(description: "[R.swift] Image named 'guide3' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIImage(named: "guide4_2") == nil { throw ValidationError(description: "[R.swift] Image named 'guide4_2' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIImage(named: "signup_btn_line_nor") == nil { throw ValidationError(description: "[R.swift] Image named 'signup_btn_line_nor' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIImage(named: "signup_line_btn_down") == nil { throw ValidationError(description: "[R.swift] Image named 'signup_line_btn_down' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIImage(named: "signup_line_btn_nor") == nil { throw ValidationError(description: "[R.swift] Image named 'signup_line_btn_nor' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIImage(named: "button_blue_bg_down") == nil { throw ValidationError(description: "[R.swift] Image named 'button_blue_bg_down' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIImage(named: "btn_bg_fill_nor") == nil { throw ValidationError(description: "[R.swift] Image named 'btn_bg_fill_nor' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIImage(named: "signup_logo") == nil { throw ValidationError(description: "[R.swift] Image named 'signup_logo' is used in storyboard 'Main', but couldn't be loaded.") }

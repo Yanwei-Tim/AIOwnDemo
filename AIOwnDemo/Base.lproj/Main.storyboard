@@ -421,15 +421,253 @@
                     <view key="view" contentMode="scaleToFill" id="C7l-rh-VsR">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jNv-wy-8wU">
+                                <rect key="frame" x="40" y="104" width="520" height="163"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="BPA-ue-DoJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="520" height="41"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RXV-S0-8JR">
+                                                <rect key="frame" x="0.0" y="0.0" width="520" height="34"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ht-6C-Mtj" customClass="UILabel_AutoSize" customModule="AIOwnDemo" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="66" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                        <color key="textColor" red="0.0" green="0.74901960779999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号码" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zPd-Su-rDD" customClass="UITextField_AutoSize" customModule="AIOwnDemo" customModuleProvider="target">
+                                                        <rect key="frame" x="76" y="0.0" width="444" height="34"/>
+                                                        <color key="tintColor" red="0.0" green="0.74901960779999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ebt-WK-c0p">
+                                                <rect key="frame" x="0.0" y="40" width="520" height="1"/>
+                                                <color key="backgroundColor" red="0.0" green="0.74901960779999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="Msb-lK-edf"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Ebt-WK-c0p" firstAttribute="width" secondItem="RXV-S0-8JR" secondAttribute="width" id="mqX-rl-vUl"/>
+                                            <constraint firstItem="RXV-S0-8JR" firstAttribute="width" secondItem="BPA-ue-DoJ" secondAttribute="width" id="qec-GS-KlI"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="wJE-8N-8S6">
+                                        <rect key="frame" x="0.0" y="61" width="520" height="41"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HRl-EQ-u5j">
+                                                <rect key="frame" x="0.0" y="0.0" width="520" height="34"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2P-ej-R8c" customClass="UILabel_AutoSize" customModule="AIOwnDemo" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="66" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                        <color key="textColor" red="0.0" green="0.74901960779999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入密码" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9i0-fX-QcY" customClass="UITextField_AutoSize" customModule="AIOwnDemo" customModuleProvider="target">
+                                                        <rect key="frame" x="76" y="0.0" width="444" height="34"/>
+                                                        <color key="tintColor" red="0.0" green="0.74901960779999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PXH-VB-3X1">
+                                                <rect key="frame" x="0.0" y="40" width="520" height="1"/>
+                                                <color key="backgroundColor" red="0.0" green="0.74901960779999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="eTc-Np-BV0"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="HRl-EQ-u5j" firstAttribute="width" secondItem="wJE-8N-8S6" secondAttribute="width" id="11F-87-LsE"/>
+                                            <constraint firstItem="PXH-VB-3X1" firstAttribute="width" secondItem="HRl-EQ-u5j" secondAttribute="width" id="gnY-LZ-Qyh"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="QPH-cS-ObI">
+                                        <rect key="frame" x="0.0" y="122" width="520" height="41"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uxe-FQ-iii">
+                                                <rect key="frame" x="0.0" y="0.0" width="520" height="34"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="确认密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IgN-Pa-KLe" customClass="UILabel_AutoSize" customModule="AIOwnDemo" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="88" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                        <color key="textColor" red="0.0" green="0.74901960779999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="确认密码" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fol-g3-4f5" customClass="UITextField_AutoSize" customModule="AIOwnDemo" customModuleProvider="target">
+                                                        <rect key="frame" x="98" y="0.0" width="422" height="34"/>
+                                                        <color key="tintColor" red="0.0" green="0.74901960779999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eq8-sy-Wuw">
+                                                <rect key="frame" x="0.0" y="40" width="520" height="1"/>
+                                                <color key="backgroundColor" red="0.0" green="0.74901960779999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="vCQ-HX-HJr"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Eq8-sy-Wuw" firstAttribute="width" secondItem="uxe-FQ-iii" secondAttribute="width" id="b7T-QJ-TBn"/>
+                                            <constraint firstItem="uxe-FQ-iii" firstAttribute="width" secondItem="QPH-cS-ObI" secondAttribute="width" id="o4a-dI-Wvp"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="BPA-ue-DoJ" firstAttribute="width" secondItem="jNv-wy-8wU" secondAttribute="width" id="kqp-QL-e8M"/>
+                                </constraints>
+                            </stackView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="signup_logo" translatesAutoresizingMaskIntoConstraints="NO" id="RVz-v5-rrt">
+                                <rect key="frame" x="242" y="554" width="116" height="26"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6j-u0-nbr" customClass="UIButton_AutoSize" customModule="AIOwnDemo" customModuleProvider="target">
+                                <rect key="frame" x="40" y="476" width="520" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="下 一 步" image="transparent_bg" backgroundImage="signup_btn_line_nor">
+                                    <color key="titleColor" red="0.0" green="0.74901960779999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted" image="transparent_bg" backgroundImage="signup_btn_line_down"/>
+                                <connections>
+                                    <segue destination="LK3-6g-mg5" kind="show" identifier="RegisterNext" id="2e4-SQ-ZXo"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Pcm-ea-547" firstAttribute="top" secondItem="w6j-u0-nbr" secondAttribute="bottom" constant="80" id="5oc-Fp-OQ9"/>
+                            <constraint firstItem="Pcm-ea-547" firstAttribute="top" secondItem="RVz-v5-rrt" secondAttribute="bottom" constant="20" id="CRq-OK-5fu"/>
+                            <constraint firstItem="jNv-wy-8wU" firstAttribute="top" secondItem="wIc-1R-DAk" secondAttribute="bottom" constant="40" id="QkP-EQ-Uhb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jNv-wy-8wU" secondAttribute="trailing" constant="20" id="Sa5-wq-DQM"/>
+                            <constraint firstItem="RVz-v5-rrt" firstAttribute="centerX" secondItem="C7l-rh-VsR" secondAttribute="centerX" id="Xyz-aB-ySe"/>
+                            <constraint firstItem="jNv-wy-8wU" firstAttribute="leading" secondItem="C7l-rh-VsR" secondAttribute="leadingMargin" constant="20" id="aeE-Uc-dtF"/>
+                            <constraint firstItem="w6j-u0-nbr" firstAttribute="width" secondItem="jNv-wy-8wU" secondAttribute="width" id="nRQ-b3-ZRW"/>
+                            <constraint firstItem="w6j-u0-nbr" firstAttribute="centerX" secondItem="C7l-rh-VsR" secondAttribute="centerX" id="vpi-Np-Ihy"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="注册" id="SQg-dD-5Ld">
                         <barButtonItem key="backBarButtonItem" title=" " id="iiT-HR-qA2"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="passwordOutlet" destination="9i0-fX-QcY" id="w8H-Xt-xTK"/>
+                        <outlet property="passwordRepeatOutlet" destination="Fol-g3-4f5" id="wUb-LQ-GjY"/>
+                        <outlet property="phoneNumberOutlet" destination="zPd-Su-rDD" id="7FS-re-2CG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="93Q-EI-kDP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3140" y="2474"/>
+        </scene>
+        <!--Register Next View Controller-->
+        <scene sceneID="ucx-Vp-V8D">
+            <objects>
+                <viewController id="LK3-6g-mg5" customClass="RegisterNextViewController" customModule="AIOwnDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Sgn-Pj-QCt"/>
+                        <viewControllerLayoutGuide type="bottom" id="jAQ-Na-W35"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xCc-Lz-faw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lL0-iF-rl2">
+                                <rect key="frame" x="40" y="124" width="520" height="146"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="已发送验证码,请输入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eca-CU-B9U" customClass="UILabel_AutoSize" customModule="AIOwnDemo" customModuleProvider="target">
+                                        <rect key="frame" x="158" y="0.0" width="204" height="27"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PKi-Gf-4T4">
+                                        <rect key="frame" x="140" y="37" width="240" height="20"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="JAg-Z6-gZJ"/>
+                                        </constraints>
+                                    </view>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入验证码" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tjB-n5-0bb" customClass="UITextField_AutoSize" customModule="AIOwnDemo" customModuleProvider="target">
+                                        <rect key="frame" x="40" y="67" width="440" height="32"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hnR-Zf-Tc8">
+                                        <rect key="frame" x="0.0" y="109" width="520" height="1"/>
+                                        <color key="backgroundColor" red="0.0" green="0.74901960779999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="Qfi-cx-Vp2"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="60秒后重新发送验证码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0j-5v-uSL" customClass="UILabel_AutoSize" customModule="AIOwnDemo" customModuleProvider="target">
+                                        <rect key="frame" x="148" y="120" width="226" height="27"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" red="0.0" green="0.74901960779999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="tjB-n5-0bb" firstAttribute="top" secondItem="eca-CU-B9U" secondAttribute="bottom" constant="60" id="O1e-Hq-6KZ"/>
+                                    <constraint firstItem="hnR-Zf-Tc8" firstAttribute="width" secondItem="lL0-iF-rl2" secondAttribute="width" id="amf-M8-CTI"/>
+                                    <constraint firstAttribute="trailing" secondItem="tjB-n5-0bb" secondAttribute="trailing" constant="40" id="dSJ-xe-ju2"/>
+                                    <constraint firstItem="tjB-n5-0bb" firstAttribute="leading" secondItem="lL0-iF-rl2" secondAttribute="leading" constant="40" id="vhp-ke-Jga"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="O1e-Hq-6KZ"/>
+                                    </mask>
+                                </variation>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TvC-gr-aVx" customClass="UIButton_AutoSize" customModule="AIOwnDemo" customModuleProvider="target">
+                                <rect key="frame" x="40" y="471" width="520" height="49"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="确 定" image="transparent_bg" backgroundImage="signup_line_btn_nor">
+                                    <color key="titleColor" red="0.0" green="0.74901960779999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="signup_line_btn_down"/>
+                                <connections>
+                                    <action selector="onConfirmTappend:" destination="LK3-6g-mg5" eventType="touchUpInside" id="eaZ-Iq-dgx"/>
+                                </connections>
+                            </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="signup_logo" translatesAutoresizingMaskIntoConstraints="NO" id="AXF-QL-XLP">
+                                <rect key="frame" x="242" y="554" width="116" height="26"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.054901960780000002" green="0.054901960780000002" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="AXF-QL-XLP" firstAttribute="centerX" secondItem="xCc-Lz-faw" secondAttribute="centerX" id="6u0-RW-EI0"/>
+                            <constraint firstItem="jAQ-Na-W35" firstAttribute="top" secondItem="AXF-QL-XLP" secondAttribute="bottom" constant="20" id="9ko-Tk-CRQ"/>
+                            <constraint firstItem="TvC-gr-aVx" firstAttribute="centerX" secondItem="xCc-Lz-faw" secondAttribute="centerX" id="PQ4-cU-YZ5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lL0-iF-rl2" secondAttribute="trailing" constant="20" id="WDp-RK-BBt"/>
+                            <constraint firstItem="TvC-gr-aVx" firstAttribute="width" secondItem="lL0-iF-rl2" secondAttribute="width" id="cL9-48-rBv"/>
+                            <constraint firstItem="lL0-iF-rl2" firstAttribute="top" secondItem="Sgn-Pj-QCt" secondAttribute="bottom" constant="20" id="fux-Q1-t12"/>
+                            <constraint firstItem="jAQ-Na-W35" firstAttribute="top" secondItem="TvC-gr-aVx" secondAttribute="bottom" constant="80" id="hBM-4K-S9S"/>
+                            <constraint firstItem="lL0-iF-rl2" firstAttribute="leading" secondItem="xCc-Lz-faw" secondAttribute="leadingMargin" constant="20" id="ov4-Lr-eOX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="authCodeOutlet" destination="tjB-n5-0bb" id="I6d-6a-EOV"/>
+                        <outlet property="confirmOutlet" destination="TvC-gr-aVx" id="3i3-jy-WU3"/>
+                        <outlet property="countDownOutlet" destination="G0j-5v-uSL" id="Fs5-cM-7q4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q4w-Qg-hNF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3823" y="2474"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="AhW-Lo-wkX">
@@ -555,6 +793,8 @@
         <image name="launcher" width="640" height="960"/>
         <image name="signup_btn_line_down" width="228" height="44"/>
         <image name="signup_btn_line_nor" width="228" height="44"/>
+        <image name="signup_line_btn_down" width="256" height="49"/>
+        <image name="signup_line_btn_nor" width="256" height="49"/>
         <image name="signup_logo" width="116" height="26"/>
         <image name="transparent_bg" width="1" height="1"/>
     </resources>
