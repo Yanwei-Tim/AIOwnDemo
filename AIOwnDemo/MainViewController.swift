@@ -20,5 +20,12 @@ class MainViewController: UIViewController {
 		// Dispose of any resources that can be recreated.
 	}
 
+	override func preferredStatusBarStyle() -> UIStatusBarStyle {
+		return .LightContent
+	}
+
+	@IBAction func onDismiss(sender: AnyObject) {
+		dismissViewControllerAnimated(true, completion: nil)
+	}
 }
 

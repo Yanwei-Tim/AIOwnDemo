@@ -69,8 +69,11 @@ class LoginViewController: UIViewController {
 		}
 
 		JHProgressHUD.sharedHUD.showInWindow(withHeader: nil, andFooter: "登录中...")
-		GCD.afterDelay(1) {
+		GCD.afterDelay(0.5) {
 			JHProgressHUD.sharedHUD.hide()
+			let mainViewController = R.storyboard.main.mainViewControllerID()!
+			mainViewController.transitioningDelegate = self
+			self.presentViewController(mainViewController, animated: true, completion: nil)
 		}
 	}
 
@@ -182,6 +185,19 @@ extension LoginViewController: UITextFieldDelegate {
 		UIView.animateWithDuration(0.3) {
 			view.center.y = screenHeight / 2 - 100
 		}
+	}
+}
+
+//MARK: 过渡动画protocol
+extension LoginViewController: UIViewControllerTransitioningDelegate {
+	// 返回打开时的动画
+	func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+		return BaseTransitionAnimation()
+	}
+
+	// 返回关闭时的动画
+	func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+		return BaseDismissTransitionAnimation()
 	}
 }
 
