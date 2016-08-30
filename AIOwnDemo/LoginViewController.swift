@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
 		passwordOutlet.delegate = self
 
 //		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(onKeyboardShow), name: UIKeyboardWillShowNotification, object: nil)
-//		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(onKeyboardHide), name: UIKeyboardDidHideNotification, object: nil)
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(onKeyboardHide), name: UIKeyboardDidHideNotification, object: nil)
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -62,6 +62,12 @@ class LoginViewController: UIViewController {
 
 	@IBAction func onLoginTappend(sender: AnyObject) {
 //		JHProgressHUD.sharedHUD.showInWindow()
+
+		if userNameOutlet.text!.isEmpty || passwordOutlet.text!.isEmpty {
+			showAlertView("提示", message: "请输入用户名/密码")
+			return
+		}
+
 		JHProgressHUD.sharedHUD.showInWindow(withHeader: nil, andFooter: "登录中...")
 		GCD.afterDelay(1) {
 			JHProgressHUD.sharedHUD.hide()
@@ -127,6 +133,7 @@ extension LoginViewController {
 	// 键盘隐藏
 	func onKeyboardHide(notify: NSNotification) {
 //		print("Hide \(NSThread.isMainThread(), notify) ")
+		translationViewBotton()
 	}
 }
 
@@ -137,20 +144,44 @@ extension LoginViewController: UITextFieldDelegate {
 		} else if textField == passwordOutlet {
 			textField.resignFirstResponder()
 			if UIScreen.isSmallScreen {
-				UIView.animateWithDuration(0.3) {
-					self.view.center.y += 100
-				}
+				translationViewBotton()
 			}
 		}
 		return true
 	}
 	func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
 		if textField === passwordOutlet && UIScreen.isSmallScreen {
-			UIView.animateWithDuration(0.3) {
-				self.view.center.y -= 100
-			}
+			translationViewTop()
 		}
 		return true
+	}
+
+	// MARK:视图向下平移
+	func translationViewBotton() {
+		var view: UIView
+		if let parentViewController = parentViewController {
+			view = parentViewController.view
+		} else {
+			view = self.view
+		}
+
+		UIView.animateWithDuration(0.3) {
+			view.center.y = height / 2
+		}
+	}
+
+	// MARK: 视图向上平移
+	func translationViewTop() {
+		var view: UIView
+		if let parentViewController = parentViewController {
+			view = parentViewController.view
+		} else {
+			view = self.view
+		}
+
+		UIView.animateWithDuration(0.3) {
+			view.center.y = height / 2 - 100
+		}
 	}
 }
 
