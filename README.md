@@ -16,4 +16,5 @@
 ##主界面
 ![](https://github.com/angcyo/AIOwnDemo/blob/master/screenshot/14020FE8-50D4-412D-9BF1-76C9C6BC77B6.png)
 
-
+##个人中心界面
+![](https://github.com/angcyo/AIOwnDemo/blob/master/screenshot/CA07689A-E7FB-44EE-9A49-9738CE2F5AE6.png)
