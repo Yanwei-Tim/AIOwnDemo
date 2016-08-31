@@ -42,6 +42,7 @@ extension UserInfoViewController: UITableViewDelegate, UITableViewDataSource {
 	func initTableView(tableView: UITableView) {
 		tableView.delegate = self
 		tableView.dataSource = self
+		tableView.scrollEnabled = false // 禁止滚动, 屏幕够用...
 	}
 
 //	func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -86,3 +87,4 @@ private var tableDataSource: [(UIImage, String, String?)] = [
 	(R.image.user_icon_ca()!, "保险认证", nil),
 	(R.image.user_icon_feedback()!, "用户反馈", nil)
 ]
+
