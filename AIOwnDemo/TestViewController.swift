@@ -36,4 +36,10 @@ class TestViewController: UIViewController {
 	@IBAction func onButton(sender: AnyObject) {
 		dismissViewControllerAnimated(true, completion: nil)
 	}
+
+	override func viewWillAppear(animated: Bool) {
+		print("")
+        
+        UIView().userInteractionEnabled = false
+	}
 }

@@ -22,4 +22,24 @@ extension UIViewController {
 			}
 			presentViewController(alertView, animated: true, completion: nil)
 	}
+
+	func hideNavigationBar() {
+		navigationController?.navigationBar.hide()
+	}
+	func showNavigationBar() {
+		navigationController?.navigationBar.show()
+	}
+	func removeNavigationBarBackground() {
+		navigationController?.navigationBar.removeBGView()
+	}
+
+	func hideTabBar() {
+		tabBarController?.tabBar.hide()
+	}
+	func showTabBar() {
+		tabBarController?.tabBar.show()
+	}
+	func removeTabBarBackground() {
+		tabBarController?.tabBar.removeBGView()
+	}
 }
