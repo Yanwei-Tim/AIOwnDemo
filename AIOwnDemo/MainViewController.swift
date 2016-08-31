@@ -17,6 +17,19 @@ class MainViewController: UIViewController {
 
 	override func viewWillAppear(animated: Bool) {
 		hideNavigationBar()
+		print("main:\(#function)")
+	}
+
+	override func viewDidAppear(animated: Bool) {
+		print("main:\(#function)")
+	}
+
+	override func viewDidDisappear(animated: Bool) {
+		print("main:\(#function)")
+	}
+
+	override func viewWillDisappear(animated: Bool) {
+		print("main:\(#function)")
 	}
 
 	override func didReceiveMemoryWarning() {

@@ -21,11 +21,24 @@ class UserInfoViewController: UIViewController {
 		initTableView(tableViewOutlet)
 	}
 
+	override func viewWillAppear(animated: Bool) {
+		print("user:\(#function)")
+//		tableViewOutlet.addConstraint(NSLayoutConstraint(item: view, attribute: .Leading, relatedBy: .Equal, toItem: nil, attribute: .Left, multiplier: 1, constant: 100))
+	}
+
 	override func viewDidAppear(animated: Bool) {
-//		print("")
+		print("user:\(#function)")
 //		for view in (navigationController?.navigationBar.subviews)! {
 //			view.removeFromSuperview()
 //		}
+	}
+
+	override func viewDidDisappear(animated: Bool) {
+		print("user:\(#function)")
+	}
+
+	override func viewWillDisappear(animated: Bool) {
+		print("user:\(#function)")
 	}
 
 	override func preferredStatusBarStyle() -> UIStatusBarStyle {
